@@ -10,7 +10,7 @@ pipeline{
 	stages{
 		stage('Checkout'){
 			steps{
-				git branch:'master',url:'https://github.com/RANI921/Q6.git'
+				git branch:'master',url:'https://github.com/RANI921/Q7.git'
 			}
 		}
 		stage('Build'){
@@ -31,7 +31,7 @@ pipeline{
 		stage('Deploy'){
 			steps{
 				sh 'mvn clean package'
-				'ansible-playbook ansible/playbook.yml -i ansible/hosts.ini'
+				sh 'ansible-playbook ansible/playbook.yml -i ansible/hosts.ini'
 			}
 		}
 	}
